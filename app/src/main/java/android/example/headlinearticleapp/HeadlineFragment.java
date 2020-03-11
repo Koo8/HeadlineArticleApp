@@ -39,21 +39,19 @@ public class HeadlineFragment extends ListFragment {
     }
 
     // define some action if it is two_pane screen on the screen in the onStart() method
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // when in a two-pane layout, set the listview to highlight the list item instead of just simply blinking
-
-        // first define the article detail holding fragment
-        Fragment article_fragment = getFragmentManager().findFragmentById(R.id.showArticle_tv);
-        // second define Listview in title fragment with the fixed id of "@android/id/list"
-        ListView listView = getListView();
-        // if both the article fragment and listView exist, then set list view with highlighted single list  item
-        if (article_fragment != null && listView != null) { // this make sure it is a two pane screen
-            listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-        }
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        // when in a two-pane layout, set the listview to highlight the list item instead of just simply blinking
+//        // first define the article detail holding fragment
+//        Fragment article_fragment = getFragmentManager().findFragmentById(R.id.showArticle_tv);
+//        // second define Listview in title fragment with the fixed id of "@android/id/list"
+//        ListView listView = getListView();
+//        // if both the article fragment and listView exist, then set list view with highlighted single list  item
+//        if (article_fragment != null && listView != null) { // this make sure it is a two pane screen
+//            listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+//        }
+//    }
 
     @Override
     public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
@@ -62,6 +60,6 @@ public class HeadlineFragment extends ListFragment {
         callback.onArticleSelected(position);
 
         // set the item clicked to be highlighted, this is only visible when it is two-pane screen
-        l.setItemChecked(position, true);
+//        l.setItemChecked(position, true);
     }
 }

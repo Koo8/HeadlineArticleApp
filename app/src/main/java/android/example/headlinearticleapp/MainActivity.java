@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements HeadlineFragment.
             //Create Fragment and give it an arguement for the selected article right away
             ArticleFragment swapFragment = new ArticleFragment();
             Bundle args = new Bundle();
-            args.putInt(ArticleFragment.ARG_POSITION,position);
+            args.putInt(ArticleFragment.ARG_POSITION,position); // ArticleFragment onStart() can capture the arguments - getArguments();
             swapFragment.setArguments(args);
 
             //now that the Fragment is prepared, swap it

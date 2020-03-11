@@ -54,7 +54,7 @@ public class ArticleFragment extends Fragment {
         if (args != null) {
             //set the article based on the argument passed in
             updateArticleView(args.getInt(ARG_POSITION));
-            Log.d("ArticleFragment***", "CurrentPosition with ARGS " + currentPosition);
+            // no passed arguments, but has been clicked
         } else if (currentPosition != -1) {
             //set the article based on the saved instance state defined during onCreateView
             updateArticleView(currentPosition);
